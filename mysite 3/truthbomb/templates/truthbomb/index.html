@@ -1,0 +1,9 @@
+{% if latest_truth_list %}
+    <ul>
+    {% for truth in latest_truth_list %}
+        <li><a href="{% url 'truthbomb:detail' truth.id %}">{{ truth.url }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No truths are available.</p>
+{% endif %}

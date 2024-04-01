@@ -1,0 +1,29 @@
+
+<iframe src={{embed_link}} class="truthsocial-embed" style="max-width: 100%; border: 0" width="600" allowfullscreen="allowfullscreen"></iframe><script src="https://truthsocial.com/embed.js" async="async"></script>
+
+<form action="{% url 'truthbomb:submit' truth.id %}" method="post">   
+    {% csrf_token %}
+
+    {{ form.election_conspiracies }} Election Conspiracies <br />
+    {{ form.election_corruption }} Election Corruption <br />
+    {{ form.fedsurrection }} Fedsurrections <br />
+    {{ form.constitution_threat }} Consititution Threat <br />
+    {{ form.praising_dictators }} Praising Dictators <br />
+    {{ form.attacking_media }} Attacking Media <br />
+    {{ form.violence }} Violence <br />
+    {{ form.vulnerable_communities }} Vulnerable Communities <br />
+    {{ form.existential_threat }} Existential Threat <br />
+    {{ form.politicizing_institutions }} Politicizing Institutions <br />
+    {{ form.weaponizing_institutions }} Weaponizing Institutions <br />
+    {{ form.pressuring_courts }} Pressuring Courts <br />
+    {{ form.weaponizing_military }} Weaponizing Militart <br />
+    {{ form.abusing_power }} Abusing Power <br />
+    {{ form.stay_in_office }} Stay In Office <br />
+    {{ form.targeting_opponents }} Targeting Opponents <br />
+    <br />
+    <input type="submit" value="Submit">
+    {{ form.viewed }} Viewed <br />
+    <input type="submit" value="Skip">
+</form>
+
+
