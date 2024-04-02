@@ -1,0 +1,23 @@
+
+<iframe src={{embed_link}} class="truthsocial-embed" style="max-width: 100%; border: 0" width="600" allowfullscreen="allowfullscreen"></iframe><script src="https://truthsocial.com/embed.js" async="async"></script>
+
+<video width="320" height="240" controls>
+  <source src="{{truth.media_attachments_url}}" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">
+</video>
+
+
+<form action="{% url 'truthbomb:submit' truth.id %}" method="post">   
+    {% csrf_token %}
+ 
+        {{ form }}
+
+    <br />
+    <input type="submit" value="Submit">
+    {{ form.viewed }} Viewed <br />
+</form>
+<form action="{% url 'truthbomb:skip' truth.id %}" method="post">
+    {% csrf_token %}
+    <input type="submit" value="Skip">
+  </form>
+

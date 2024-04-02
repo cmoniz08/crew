@@ -1,0 +1,32 @@
+<h1> Welcome to Truthbomb </h1>
+<form action="{% url 'truthbomb:submit_initials' %}" method="post">
+   {% csrf_token %}
+  <label for="fname">Enter your initials:</label>
+  <input type="text" id="fname" name="fname"><br><br>
+  <input type="submit" value="Submit">
+</form>
+
+<p>OR</p>
+
+<form action="{% url 'truthbomb:submit_topic' %}" method="post">
+  {% csrf_token %}
+<p>Choose your write-up topic:</p>
+
+<div>
+  <input type="checkbox" id="election_conspiracies" name="election_conspiracies"
+         checked>
+  <label for="scales">Election Conspiracies</label>
+</div>
+
+<div>
+  <input type="checkbox" id="abusing_power" name="abusing_power">
+  <label for="abusing_power">Abusing Power</label>
+</div>
+
+<div>
+  <input type="checkbox" id="jan6" name="jan6">
+  <label for="jan6">Fedsurrection</label>
+</div>
+<br>
+<input type="submit" value="Submit">
+</form>
